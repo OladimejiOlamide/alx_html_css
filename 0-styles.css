@@ -1,0 +1,172 @@
+/* --- CSS FOUNDATIONS (Reset, Variables, Base) --- */
+
+/* 1. CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Variables */
+:root {
+    --color-primary: #FF6565;
+    --color-dark: #071526;
+    --color-text-light: #FFFFFF;
+    --color-text-dark: #333333;
+    --max-content-width: 1000px;
+}
+
+/* 3. Base Styles */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Base link and button styling (Interactions Note) */
+a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover, a:active {
+    color: var(--color-primary); /* Links hover/active: #FF6565 */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 22px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn:hover, .btn:active {
+    opacity: 0.9; /* Button hover/active: opacity: 0.9 */
+}
+
+/* --- HEADER AND HERO STYLES --- */
+
+.hero-section {
+    /* Placeholder for the hero image */
+    background-image: url("https://placehold.co/1920x1000/1e293b/FFFFFF/png?text=Hero+Background"); 
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    padding-bottom: 50px; /* Base padding for mobile */
+}
+
+/* Header Positioning */
+.header {
+    position: absolute; /* Allows hero content to be under it */
+    width: 100%;
+    padding: 20px 0;
+    z-index: 10;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    color: var(--color-primary);
+    margin-right: 5px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 40px;
+    font-size: 14px;
+}
+
+/* Mobile toggle (hidden on desktop) */
+.nav-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* Hero Content Styling */
+.hero-content {
+    text-align: center;
+    padding-top: 250px; /* Pushes content down below the header */
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    max-width: 600px;
+    margin: 20px auto 40px;
+    font-size: 16px;
+}
+
+.hero-text {
+    max-width: 650px;
+    margin: 60px auto 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* --- RESPONSIVENESS (480px or less) --- */
+@media (max-width: 480px) {
+    
+    .hero-content {
+        padding-top: 150px;
+    }
+    
+    .hero-content h1 {
+        font-size: 40px;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle, .hero-text {
+        font-size: 14px;
+        padding: 0 5px;
+    }
+    
+    /* Mobile Navigation */
+    .nav-menu {
+        display: none; /* Hide main menu on small screens */
+    }
+    
+    .nav-toggle {
+        display: block; /* Show hamburger icon */
+    }
+}
