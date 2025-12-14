@@ -1,0 +1,97 @@
+/* * 1-styles.css - Base styles for the Holberton Headphones project.
+ * This file includes the necessary font face declaration for the custom icons 
+ * and the specific content codes for each icon class.
+ */
+
+/* ============================
+   Font Face Declaration 
+   ============================ */
+
+/*
+ * NOTE: For the custom Holberton icons to work, the font files 
+ * (eot, svg, ttf, woff, woff2) must be in the './fonts/' directory
+ * relative to this CSS file.
+ */
+@font-face {
+    font-family: 'Holberton-School-Icon';
+    /* Use relative path from the CSS file to the fonts directory */
+    src: url('./fonts/Holberton-School-Icon.eot?sq4k8g');
+    src: url('./fonts/Holberton-School-Icon.eot?sq4k8g#iefix') format('embedded-opentype'),
+        url('./fonts/Holberton-School-Icon.ttf?sq4k8g') format('truetype'),
+        url('./fonts/Holberton-School-Icon.woff?sq4k8g') format('woff'),
+        url('./fonts/Holberton-School-Icon.svg?sq4k8g#Holberton-School-Icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block; /* Ensures the font is loaded correctly */
+}
+
+/* ============================
+   Icon Class Usage
+   ============================ */
+
+/* * Base class for applying the custom icon font. 
+ * This targets elements using the icon font, like pseudo-elements.
+ */
+[class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {
+    /* Apply the custom font family */
+    font-family: 'Holberton-School-Icon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Enable antialiasing and subpixel rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* * Specific icon codes (Glyphs)
+ * These definitions tell the browser which specific character (icon) 
+ * to display for a given class name. 
+ */
+.holberton_school-icon-arrow_1:before {
+    content: "\e900"; 
+}
+.holberton_school-icon-arrow_2:before {
+    content: "\e901"; 
+}
+.holberton_school-icon-headphone:before {
+    content: "\e902"; 
+}
+.holberton_school-icon-menu:before {
+    content: "\e903"; 
+}
+.holberton_school-icon-signal:before {
+    content: "\e904"; 
+}
+.holberton_school-icon-star:before {
+    content: "\e905"; 
+}
+
+
+/* ============================
+   General/Reset Styles
+   ============================ */
+
+/* Simple reset for consistent box model */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Set base typography and colors */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Fallback font */
+    color: #333;
+}
+
+/* Header/Hero section styling (basic) */
+header {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Add any other necessary styles below */
