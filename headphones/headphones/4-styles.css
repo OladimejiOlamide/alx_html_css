@@ -1,0 +1,457 @@
+/* * 4-styles.css - Full project styles including Header, Hero, What We Do, Our Results, Contact Us, and Footer.
+ * Based on 3-styles.css, extended with the Footer section styling.
+ */
+
+/* --- CSS FOUNDATIONS (Reset, Variables, Base) --- */
+
+/* 1. CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Variables */
+:root {
+    --color-primary: #FF6565;
+    --color-dark: #071526; /* Footer background color */
+    --color-light-dark: #122137;
+    --color-text-light: #FFFFFF;
+    --color-text-dark: #333333;
+    --color-text-gray: #555555;
+    --color-bg-light: #FFFFFF;
+    --max-content-width: 1000px;
+}
+
+/* 3. Base Styles */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Base link and button styling (Interactions Note) */
+a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover, a:active {
+    color: var(--color-primary); /* Links hover/active: #FF6565 */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 22px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.btn:hover, .btn:active {
+    opacity: 0.9; /* Button hover/active: opacity: 0.9 */
+}
+
+/* --- CUSTOM FONT ICON INTEGRATION --- */
+/* NOTE: Ensure font files are in './fonts/' */
+@font-face {
+    font-family: 'Holberton-School-Icon';
+    src: url('./fonts/Holberton-School-Icon.eot?sq4k8g');
+    src: url('./fonts/Holberton-School-Icon.eot?sq4k8g#iefix') format('embedded-opentype'),
+        url('./fonts/Holberton-School-Icon.ttf?sq4k8g') format('truetype'),
+        url('./fonts/Holberton-School-Icon.woff?sq4k8g') format('woff'),
+        url('./fonts/Holberton-School-Icon.svg?sq4k8g#Holberton-School-Icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {
+    font-family: 'Holberton-School-Icon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Existing Icons */
+.holberton_school-icon-arrow_1:before { content: "\e900"; }
+.holberton_school-icon-arrow_2:before { content: "\e901"; }
+.holberton_school-icon-headphone:before { content: "\e902"; }
+.holberton_school-icon-menu:before { content: "\e903"; }
+.holberton_school-icon-signal:before { content: "\e904"; }
+.holberton_school-icon-star:before { content: "\e905"; }
+
+/* Placeholder Social Icons (adjust codes if needed for your custom font) */
+.holberton_school-icon-facebook:before { content: "\e906"; }
+.holberton_school-icon-twitter:before { content: "\e907"; }
+.holberton_school-icon-instagram:before { content: "\e908"; }
+
+
+/* --- HEADER AND HERO STYLES --- */
+
+.hero-section {
+    background-image: url("https://placehold.co/1920x1000/1e293b/FFFFFF/png?text=Hero+Background"); 
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 10;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.logo span {
+    color: var(--color-primary);
+    margin-right: 5px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 40px;
+    font-size: 14px;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hero-content {
+    text-align: center;
+    padding-top: 250px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    max-width: 600px;
+    margin: 20px auto 40px;
+    font-size: 16px;
+}
+
+.hero-text {
+    max-width: 650px;
+    margin: 60px auto 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* --- GENERIC SECTION STYLES (Reusable) --- */
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+/* --- WHAT WE DO SECTION STYLES --- */
+
+.what-we-do {
+    background-color: var(--color-bg-light);
+}
+
+.what-we-do .section-title, 
+.what-we-do .section-subtitle, 
+.what-we-do .service-item,
+.what-we-do h4 {
+    color: var(--color-text-dark);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.service-item {
+    padding: 20px;
+}
+
+.service-item [class^="holberton_school-icon-"] {
+    font-size: 64px;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.service-item p {
+    font-size: 14px;
+    color: var(--color-text-gray);
+}
+
+
+/* --- OUR RESULTS SECTION STYLES --- */
+
+.our-results {
+    background-color: var(--color-light-dark);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.result-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+    position: relative;
+}
+
+.pentagon {
+    width: 170px;
+    height: 170px;
+    background-color: var(--color-primary);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    color: var(--color-text-light);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.pentagon span {
+    font-size: 14px;
+    font-weight: 400;
+    display: block;
+    margin-top: 5px;
+}
+
+/* --- CONTACT US SECTION STYLES --- */
+
+.contact-us {
+    background-color: var(--color-bg-light);
+}
+
+.contact-us .section-title {
+    color: var(--color-text-dark);
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 40px auto 0;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 35px;
+    position: relative;
+}
+
+/* Label is visually hidden but kept for accessibility */
+.form-group label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid var(--color-text-dark);
+    background: transparent;
+    color: var(--color-text-dark);
+    font-size: 16px;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-bottom-color: var(--color-primary);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px;
+}
+
+/* Disabled state for button */
+.contact-form .btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--color-text-gray);
+}
+
+
+/* --- FOOTER STYLES (New) --- */
+
+.footer {
+    background-color: var(--color-dark);
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows stacking on small screens */
+}
+
+.social-icons {
+    display: flex;
+    gap: 30px;
+}
+
+.social-icon-link {
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icon-link:hover {
+    color: var(--color-primary);
+}
+
+.copyright {
+    font-size: 12px;
+    color: var(--color-text-gray);
+}
+
+
+/* --- RESPONSIVENESS (480px or less) --- */
+@media (max-width: 480px) {
+    
+    .hero-content {
+        padding-top: 150px;
+    }
+    
+    .hero-content h1 {
+        font-size: 40px;
+        line-height: 1.1;
+    }
+
+    /* Mobile Navigation */
+    .nav-menu {
+        display: none;
+    }
+    
+    .nav-toggle {
+        display: block;
+    }
+    
+    /* Responsive Grids */
+    .section-padding {
+        padding: 40px 0;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 0 10px;
+    }
+    
+    .pentagon {
+        width: 120px;
+        height: 120px;
+        font-size: 30px;
+    }
+
+    /* Footer Mobile adjustments: stack elements */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .copyright {
+        /* Pushing copyright to the bottom of the stack */
+        order: 3; 
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .social-icons {
+        order: 2;
+    }
+}
